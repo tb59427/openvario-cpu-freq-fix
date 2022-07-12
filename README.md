@@ -14,16 +14,16 @@ a sensor board.
 If you are using a sensor board you should set cpu speed above 600MHz (most boards seem to be offering 720MHz) as speeds below 600MHz apparently break
 sensor reading.
 In order to change the clock frequency used, edit 'fix_cpu_freq.sh' and replace 528000 with your preferred frequency. If you want to find out, which
-frequencies your board supports, you can do 'cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies'.
+frequencies your board supports, you can do `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies`.
 
 # Installation
 1. Copy "fix_cpu_freq.sh" to /usr/bin
-2. make it executable by doing a chmod a+x /usr/bin/fix_cpu_freq.sh
+2. make it executable by doing a `chmod a+x /usr/bin/fix_cpu_freq.sh`
 3. Copy "fix_cpu_freq.service" to /etc/systemd/system
-4. Do a 'systemctl daemon-reload' to tell systemd about the new service
-5. Do a 'systemctl enable fix_cpu_freq' to enable the service
-6. you can (but don't have to) reboot now and the cpu frequency will be set
-7. alternatively you can just manually run /usr/bin/fix_cpu_freq.sh to set the desired frequency
+4. Do a `systemctl daemon-reload` to tell systemd about the new service
+5. Do a `systemctl enable fix_cpu_freq` to enable the service
+6. you can (but don't have to) `reboot` now and the cpu frequency will be set
+7. alternatively you can just manually run `/usr/bin/fix_cpu_freq.sh` to set the desired frequency
 
 # Beware
 This is early days of this fix - I decided to publish this fix as many people were complaining about Openvario's freeze issues.
