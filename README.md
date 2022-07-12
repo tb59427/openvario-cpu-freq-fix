@@ -20,8 +20,8 @@ frequencies your board supports, you can do 'cat /sys/devices/system/cpu/cpu0/cp
 1. Copy "fix_cpu_freq.sh" to /usr/bin
 2. make it executable by doing a chmod a+x /usr/bin/fix_cpu_freq.sh
 3. Copy fix_cpu_freq.service to /etc/systemd/system
-4. Do a systemctl daemon-reload to tell systemd about the new service
-5. Do a systemctl enable fix_cpu_freq to enable the service
+4. Do a 'systemctl daemon-reload' to tell systemd about the new service
+5. Do a 'systemctl enable fix_cpu_freq' to enable the service
 6. you can (but don't have to) reboot now and the cpu frequency will be set
 7. alternatively you can just manually run /usr/bin/fix_cpu_freq.sh to set the desired frequency
 
