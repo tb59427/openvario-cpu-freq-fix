@@ -1,8 +1,11 @@
-# openvario-cpu-freq-fix
-Quick and dirty fix for openvario to fix cpu frequency to a fixed rate (avoiding cpu frequency changes)
+# What this is
+A quick and dirty fix for Openvario to set cpu frequency to a fixed rate (avoiding cpu frequency changes).
+
 This fix by no means actually fixes the underlying freeze issue experienced by Openvario users. It simply stops the system from changing cpu frequencies. 
-This in turn stops kernel driver cpu_freq from doing much. It seems to be this driver causing the freezes. So: this fix stops the freeze at the cost of
-fixing cpu frequency. For more information on this freeze issue check out https://github.com/Openvario/meta-openvario/issues/304
+This in turn stops kernel driver cpu_freq from doing much. It seems to be this driver causing the freezes. If it doesn't do anything the freezes seem
+to stop. 
+
+So: this fix stops the freeze at the cost of fixing cpu frequency. For more information on this freeze issue check out https://github.com/Openvario/meta-openvario/issues/304
 
 # Considerations
 The script in here fixes cpu speed at 528MHz. If your board supports this speed AND you don't have a sensor board, you may be fine just using the
@@ -20,11 +23,11 @@ frequencies your board supports, you can do 'cat /sys/devices/system/cpu/cpu0/cp
 4. Do a systemctl daemon-reload to tell systemd about the new service
 5. Do a systemctl enable fix_cpu_freq to enable the service
 6. you can (but don't have to) reboot now and the cpu frequency will be set
-7. alternatively you can just manually run /usr/bin/fix_cpu_freq.sh
+7. alternatively you can just manually run /usr/bin/fix_cpu_freq.sh to set the desired frequency
 
 # Beware
-This is early days of this fix - I decided to publish this fix as many people were complaining about Openvario's freeze issues
-Don't blame me, if you Openvario goes up in flames because you fixed cpu speed at a very high frequency. You are doing this at your own risk.
-At 528MHz I have seen temperatures of around 34-35Cm at 864MHz it was around 10C more. But your mileage may vary.
-This fix will disappear if you decide to use a new SD card. It has to be reapplied with every new SD card you create. Once we better understand the freeze
-bug I am sure there will be fixes to the proper Openvario build environment.
+This is early days of this fix - I decided to publish this fix as many people were complaining about Openvario's freeze issues.
+Don't blame me, if your Openvario goes up in flames because you fixed cpu speed at some crazy frequency. You are doing this at your own risk.
+At 528MHz I have seen temperatures of around 34-35Cm at 864MHz it was around 10C more. In the lab, not in the cockpit. Your mileage may vary.
+This fix has to be reapplied with every new SD card you create. Once we better understand the freeze bug I am sure there will be fixes to 
+the proper Openvario build environment.
