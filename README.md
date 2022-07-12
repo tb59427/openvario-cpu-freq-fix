@@ -28,6 +28,6 @@ frequencies your board supports, you can do `cat /sys/devices/system/cpu/cpu0/cp
 # Beware
 This is early days of this fix - I decided to publish this fix as many people were complaining about Openvario's freeze issues.
 Don't blame me, if your Openvario goes up in flames because you fixed cpu speed at some crazy frequency. You are doing this at your own risk.
-At 528MHz I have seen temperatures of around 34-35Cm at 864MHz it was around 10C more. In the lab, not in the cockpit. Your mileage may vary.
+At 528MHz I have seen temperatures of around 34-35C, at 864MHz it was around 10C more. In the lab, not in the cockpit. Your mileage may vary.
 This fix has to be reapplied with every new SD card you create. Once we better understand the freeze bug I am sure there will be fixes to 
 the proper Openvario build environment.
