@@ -17,7 +17,8 @@ If you are using a sensor board you should set cpu speed above 600MHz (most boar
 sensor reading](https://linux-sunxi.org/Cpufreq) (see section "Performance/functionality impacts").
 
 In order to change the clock frequency in the script, edit 'fix_cpu_freq.sh' and replace 528000 with your preferred frequency. 
-If you want to find out, which frequencies your board supports, you can do `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies`.
+If you want to find out, which frequencies your board supports, you can do 
+`cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies`.
 
 # Installation
 1. Copy "fix_cpu_freq.sh" to /usr/bin
