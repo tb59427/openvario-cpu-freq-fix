@@ -9,12 +9,14 @@ So: this fix stops the freeze at the cost of fixing cpu frequency. For more info
 
 # Considerations
 The script in here fixes cpu speed at 528MHz. If your board supports this speed AND you don't have a sensor board, you may be fine just using the
-script as supplied. If your board doesn't support this speed, it will defaut to the nearest lower speed below 528MHz, which may be ok if your are not using
-a sensor board. 
+script as supplied. If your board doesn't support this speed, it will defaut to the nearest lower speed below 528MHz, which may be ok if you 
+are not using a sensor board. 
+
 If you are using a sensor board you should set cpu speed above 600MHz (most boards seem to be offering 720MHz) as [speeds below 600MHz apparently break
 sensor reading](https://linux-sunxi.org/Cpufreq) (see section "Performance/functionality impacts").
-In order to change the clock frequency used, edit 'fix_cpu_freq.sh' and replace 528000 with your preferred frequency. If you want to find out, which
-frequencies your board supports, you can do `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies`.
+
+In order to change the clock frequency in the script, edit 'fix_cpu_freq.sh' and replace 528000 with your preferred frequency. 
+If you want to find out, which frequencies your board supports, you can do `cat /sys/devices/system/cpu/cpu0/cpufreq/scaling_available_frequencies`.
 
 # Installation
 1. Copy "fix_cpu_freq.sh" to /usr/bin
