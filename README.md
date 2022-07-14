@@ -1,7 +1,7 @@
 # What this is
 A quick and dirty work around for Openvario crashes by setting cpu frequency to a fixed rate (avoiding cpu frequency changes).
 
-This worka around by no means actually fixes the underlying freeze issue experienced by Openvario users. It simply stops the system from 
+This work around by no means actually fixes the underlying freeze issue experienced by Openvario users. It simply stops the system from 
 changing cpu frequencies. This in turn stops kernel driver cpu_freq from doing much. It seems to be this driver causing the freezes. 
 If it doesn't do anything the freezes seem to stop. 
 
